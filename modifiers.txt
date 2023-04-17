@@ -3,6 +3,7 @@ Acidic
 Adamantium
 Aether
 Agony
+Albanian
 Alchemist
 Alien
 Almadine
@@ -43,8 +44,8 @@ Beastial
 Bee
 Beer
 Behemoth
-Bile
 Beserk
+Bile
 Blasphemous
 Blessed
 Blighted
@@ -87,6 +88,7 @@ Chess
 Chi
 Chilling
 Chimera
+Chinese
 Chinese
 Chromatic
 Citadel
@@ -171,6 +173,7 @@ Dune
 Dusk
 Dyanasty
 Earthen
+Earthy
 Ebony
 Echo
 Eclipse
@@ -316,6 +319,7 @@ King
 Kobold
 Kraken
 Lava
+Lazy
 Leafy
 Leather
 Leech
@@ -337,6 +341,7 @@ Lunar
 Madman
 Madness
 Maggot
+Magic
 Magma
 Magnetic
 Magus
@@ -358,6 +363,8 @@ Maw
 Mech
 Metallic
 Midnight
+Mighty
+Milky
 Mimic
 Mind
 Minotaur
@@ -365,6 +372,7 @@ Mirage
 Mirror
 Mist
 Mithril
+Modern
 Molten
 Monolith
 Monolithic
@@ -408,6 +416,7 @@ Oni
 Opal
 Opulent
 Oracle
+Orange
 Ore
 Oryx
 Overgrown
@@ -434,8 +443,10 @@ Plated
 Platinum
 Plumed
 Poisonous
+Polish
 Portal
 Possessed
+Powerful
 Prehistoric
 Primal
 Primordial
@@ -506,6 +517,7 @@ Shark
 Shattered
 Shell
 Shifting
+Shiny
 Silver
 Silvered
 Sin
@@ -585,8 +597,8 @@ Tsunami
 Tundra
 Turtle
 Tusked
-Twin
 Twilight
+Twin
 Umber
 Undead
 Underworld
@@ -637,6 +649,3 @@ Yeti
 Zephyr
 Zodiac
 Zombified
-Polish
-Albanian
-Chinese
