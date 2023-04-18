@@ -33,7 +33,7 @@ def generate_item_name():
             item_name = noun + " of the " + owner
         case 2:
             item_name = owner + " " + noun
-    return item_name
+    return "**" + item_name + "**"
 
 
 @bot.event
@@ -53,7 +53,7 @@ class MorePls(discord.ui.View):
     @discord.ui.button(label="more pls", style=discord.ButtonStyle.primary)
     async def button_callback(self, button, interaction):
         await interaction.response.edit_message(view=None)
-        await interaction.followup.send(generate_item_name(), view=MorePls())
+        await interaction.followup.send(generate_item_name(), view=MorePls(timeout=30))
 
 
 @bot.slash_command(name="item", description="Generate a random fantasy item")
@@ -62,10 +62,15 @@ async def item(ctx):
 
 
 @bot.slash_command(name="help", description="Info about the bot")
-async def item(ctx):
-    await ctx.respond("Hello! I am Ideas Boi. Here\'s a list of commands:\n /ping - Pong!\n /item - Generates a "
-                      "random fantasy item\n /help - This menu\n If you have any questions/suggestions, "
-                      "message Battlnerd#2071")
+async def help(ctx):
+    with open('help.txt') as file:
+        message = file.read()
+    await ctx.respond(message)
+
+
+@bot.slash_command(name="challenge", description="Challenge an another user to draw an item!")
+async def challenge(ctx, arg):
+    await ctx.respond(f" <@{ctx.author.id} challenged " + arg + " to draw " + generate_item_name() + "!")
 
 
 bot.run(TOKEN)
