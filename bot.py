@@ -135,7 +135,7 @@ async def challenge(ctx, arg1, arg2):
         case "location":
             await ctx.respond(f" <@{ctx.author.id}> challenges " + arg2 + " to draw " + generate_location() + "!")
         case _:
-            await ctx.respond("Invalid arguments!", delete_after=5)
+            await ctx.respond("Invalid arguments! Use /help to see correct syntax.", delete_after=5)
 
 
 # /cta omj cta
