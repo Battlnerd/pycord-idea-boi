@@ -139,6 +139,7 @@ Potion
 Fish
 Shrimp
 Candy
+Tangerine
 Treat
 Wine
 Drink
