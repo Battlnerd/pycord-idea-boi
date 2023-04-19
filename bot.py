@@ -128,10 +128,17 @@ async def help(ctx):
 
 # /challenge command
 @bot.slash_command(name="challenge", description="Challenge an another user to draw an item!")
-async def challenge(ctx, arg):
-    await ctx.respond(f" <@{ctx.author.id}> challenges " + arg + " to draw " + generate_item() + "!")
+async def challenge(ctx, arg1, arg2):
+    match arg1:
+        case "item":
+            await ctx.respond(f" <@{ctx.author.id}> challenges " + arg2 + " to draw " + generate_item() + "!")
+        case "location":
+            await ctx.respond(f" <@{ctx.author.id}> challenges " + arg2 + " to draw " + generate_location() + "!")
+        case _:
+            await ctx.respond("Invalid arguments!", delete_after=5)
 
 
+# /cta omj cta
 @bot.slash_command(name="cta", description="Send an image of a cta")
 async def cta(ctx):
     cta_link = json.loads(random_cta("https://some-random-api.ml/img/cat"))

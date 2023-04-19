@@ -1,6 +1,6 @@
 Here's a list of commands supported by me:
 **/item** - Generate a random fantasy item name
-**/challenge** <@user> - Challenge a specific user to draw a randomly generated item!
+**/challenge** <"item"/"location"> <@user> - Challenge a specific user to draw a randomly generated item or location!
 **/location** - Generate a random fantasy location/dungeo
 **/ping** - Pong!
 **/help** - This menu
