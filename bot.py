@@ -5,6 +5,7 @@ from urllib.request import urlopen
 import json
 
 import discord
+import requests
 from dotenv import load_dotenv
 
 # bot TOKEN define
@@ -65,12 +66,15 @@ def generate_location():
     return "**" + loc_name + "**"
 
 
-# cta
-def random_cta(url):
-    page = urlopen(url)
-    html_bytes = page.read()
-    html = html_bytes.decode("utf-8")
-    return html
+# /cta
+@bot.slash_command(name="cta", description="Send an image of a cta")
+async def cta(ctx):
+    res = requests.request('GET', "https://api.thecatapi.com/v1/images/search")
+    if (code := res.status_code) == 200:
+        cta_link = res.json()[0].get('url')
+        await ctx.respond(cta_link)
+    else:
+        await ctx.respond(f'Error {code}')
 
 
 # on startup message
@@ -136,13 +140,6 @@ async def challenge(ctx, arg1, arg2):
             await ctx.respond(f" <@{ctx.author.id}> challenges " + arg2 + " to create " + generate_location() + "!")
         case _:
             await ctx.respond("Invalid arguments! Use /help to see correct syntax.", delete_after=5)
-
-
-# /cta omj cta
-@bot.slash_command(name="cta", description="Send an image of a cta")
-async def cta(ctx):
-    cta_link = json.loads(random_cta("https://some-random-api.ml/img/cat"))
-    await ctx.respond(cta_link["link"])
 
 
 # run the bot
