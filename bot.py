@@ -65,16 +65,14 @@ def generate_location():
             loc_name = location + " of the " + owner
     return "**" + loc_name + "**"
 
-
-# /cta
-@bot.slash_command(name="cta", description="Send an image of a cta")
-async def cta(ctx):
+# generate cta define
+def generate_cta():
     res = requests.request('GET', "https://api.thecatapi.com/v1/images/search")
     if (code := res.status_code) == 200:
         cta_link = res.json()[0].get('url')
-        await ctx.respond(cta_link)
+        return cta_link
     else:
-        await ctx.respond(f'Error {code}')
+        return f'Error {code}'
 
 
 # on startup message
@@ -108,6 +106,22 @@ class LocationButton(discord.ui.View):
     async def button_callback(self, button, interaction):
         await interaction.response.edit_message(view=None)
         await interaction.followup.send(generate_location(), view=LocationButton(timeout=30))
+
+class CtaButton(discord.ui.View):
+    async def on_timeout(self):
+        await self.message.edit(view=None)
+
+    @discord.ui.button(label="more pls", style=discord.ButtonStyle.primary)
+    async def button_callback(self, button, interaction):
+        await interaction.response.edit_message(view=None)
+        await interaction.followup.send(generate_cta(), view=CtaButton(timeout=30))
+
+
+# /cta command
+@bot.slash_command(name="cta", description="Send an image of a cta")
+async def cta(ctx):
+    await ctx.send(generate_cta(), view=CtaButton(timeout=30))
+
 
 
 # /item command
