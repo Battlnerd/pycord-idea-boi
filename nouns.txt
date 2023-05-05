@@ -23,6 +23,7 @@ Whip
 Scythe
 Pommel
 Saber
+Rapier
 Trident
 Poleaxe
 Mace
@@ -48,6 +49,7 @@ Plating
 Hide
 Kabuto
 Cap
+Amulet
 
 #Magic
 Orb
@@ -67,6 +69,13 @@ Poison
 Tome
 Stone
 Gem
+Grimoire
+Incense
+Herb
+Dust
+Elixir
+Charm
+Rune
 
 #Tools
 Pickaxe
@@ -88,6 +97,8 @@ Scissors
 Screwdriver
 Nail
 Harpoon
+Hammer
+Chisel
 
 #Military
 Pistol
@@ -101,6 +112,10 @@ Landmine
 Ammunition
 Bullet
 Blaster
+Missile
+Mortar
+Grenade
+Mine
 
 #Musical Instruments
 Lute
@@ -124,7 +139,10 @@ Potion
 Fish
 Shrimp
 Candy
+Tangerine
 Treat
+Wine
+Drink
 
 #Shapes
 Pipe
@@ -133,6 +151,10 @@ Cube
 Tetrahedron
 Sphere
 Shape
+Torus
+Pyramid
+Cone
+Cylinder
 
 #Other
 Quiver
