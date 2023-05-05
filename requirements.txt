@@ -1,5 +1,4 @@
+py-cord
 python-dotenv
-pip
 attrs
-wheel
-setuptools
+requests
